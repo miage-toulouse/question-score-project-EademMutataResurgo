@@ -19,7 +19,7 @@ public class QuestionAChoixMultipleTest {
         this.l=new ArrayList<>();
         l.add(1);
         l.add(2);
-        this.question=new QuestionAChoixMultiple("un énoncé",l);
+        this.question=new QuestionAChoixMultiple("un énoncé",l,3);
     }
 
     @Test
@@ -50,6 +50,6 @@ public class QuestionAChoixMultipleTest {
         // and : on calcul le score
         float resScore = question.getScoreForIndice(indiceEtudiant);
         // then : le score obtenu est 0
-        assertEquals(0f, resScore,0.01f);
+        assertEquals(-100f, resScore,0.01f);
     }
 }

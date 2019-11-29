@@ -16,7 +16,7 @@ public class ScoreCalculateurTest {
 
     @Before
     public void setUp() throws Exception {
-        this.question = new QuestionAChoixMultiple("q1",new ArrayList<Integer>(Arrays.asList(2,3,5)));
+        this.question = new QuestionAChoixMultiple("q1",new ArrayList<Integer>(Arrays.asList(2,3,5)),5);
         this.score = new ScoreCalculateur();
     }
 
