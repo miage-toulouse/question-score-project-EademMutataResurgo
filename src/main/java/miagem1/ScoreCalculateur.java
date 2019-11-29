@@ -16,10 +16,13 @@ public class ScoreCalculateur {
         float score = 0 ;
         for (int indice:indicesReponseEtudiant) {
             score += question.getScoreForIndice(indice);
+            if(question.getScoreForIndice(indice)==0){
+                score-=50;
+            }
+        }
+        if(score<0){
+            score=0;
         }
         return score;
     }
-
-
-
 }

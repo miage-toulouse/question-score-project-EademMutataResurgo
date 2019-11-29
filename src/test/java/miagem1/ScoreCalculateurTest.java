@@ -56,4 +56,32 @@ public class ScoreCalculateurTest {
         //then : le score obtenu est 100
         assertEquals(100, resScore,0.01f);
     }
+
+    @Test
+    public void testGetScoreForIndiceCinqRéponses() {
+        //when : quand l'étudiant fournit l'indice de bonne réponse et de mauvaise réponse
+        ArrayList<Integer> liste=new ArrayList<>();
+        liste.add(1);
+        liste.add(2);
+        liste.add(3);
+        liste.add(4);
+        liste.add(5);
+        //and : on demande le score de l'indice à la question
+        float resScore=this.score.calculeScore(liste,this.question);
+        //then : le score obtenu est 100
+        assertEquals(0, resScore,0.01f);
+    }
+
+    @Test
+    public void testGetScoreForIndiceDeuxBUneMRéponses() {
+        //when : quand l'étudiant fournit l'indice de bonne réponse et de mauvaise réponse
+        ArrayList<Integer> liste=new ArrayList<>();
+        liste.add(1);
+        liste.add(2);
+        liste.add(3);
+        //and : on demande le score de l'indice à la question
+        float resScore=this.score.calculeScore(liste,this.question);
+        //then : le score obtenu est 100
+        assertEquals(16.66f, resScore,0.01f);
+    }
 }
